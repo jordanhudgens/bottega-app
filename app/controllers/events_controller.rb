@@ -20,6 +20,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def rsvp
+    EventSignup.create(user_id: current_user.id, event_id: params[:id], rsvp: params[:rsvp_status])
+    redirect_to event_path(params[:id]), notice: "You have RSVP'd"
+  end
+
 	private
 
 	  def event_params
