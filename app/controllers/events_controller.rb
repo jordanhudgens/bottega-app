@@ -29,6 +29,11 @@ class EventsController < ApplicationController
     end
   end
 
+
+  def rsvp
+    EventSignup.find_or_create_by(user_id: current_user.id, event_id: params[:id], rsvp: params[:rsvp_status])
+    redirect_to event_path(params[:id]), notice: "You have RSVP'd"
+
   def edit
     @event = Event.find(params[:id])
   end
