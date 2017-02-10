@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -30,7 +30,21 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
+
+  def update
+    respond_to do |format|
+      if @event.update(event_params)
+        format.html { redirect_to @event, notice: 'You have successfully updated the event.' }
+        format.json { render :show, status: :ok, location: @event }
+      else
+        format.html { render :edit }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
 	private
 
