@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
+
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+
   def show
-     @event = Event.find(params[:id])
+     @event = Event.includes(:comments).find(params[:id])
+     @comment = Comment.new
   end
 
   def index
