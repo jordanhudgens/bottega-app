@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+<<<<<<< Updated upstream
 
   def show
      @event = Event.find(params[:id])
@@ -30,4 +31,3 @@ class EventsController < ApplicationController
       params.require(:event).permit(:title, :time, :description, :location)
 	  end
 end
-
