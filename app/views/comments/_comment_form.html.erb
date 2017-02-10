@@ -1,10 +1,8 @@
-<% unless current_user.is_a? GuestUser %> 
-  <%= form_for @comment, remote: true, authenticity_token: true do |f| %>
+  <%= form_for @comment, url:'#' do |f| %>
     <div class="form-group">
-      <%= f.label :your_comment %>:
+      <%= f.label :comment %>:
       <%= f.text_area :content, class: "form-control" %>
     </div>
-    <%= f.hidden_field :event_id, value: event.id %>
+
     <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
   <% end %>
-<% end %>

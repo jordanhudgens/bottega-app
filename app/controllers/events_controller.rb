@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-<<<<<<< Updated upstream
 
   def show
-     @event = Event.find(params[:id])
+     @event = Event.includes(:comments).find(params[:id])
+     @comment = Comment.new
   end
 
   def index
