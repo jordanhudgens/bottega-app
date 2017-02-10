@@ -4,9 +4,13 @@ class EventsController < ApplicationController
     # @event = Event.find(params[:id])-
   end
 
-  private
+	def new
+		@event = Event.new
+	end
 
-  def event_params
+	private
 
-  end
+	  def event_params
+
+	  end
 end
