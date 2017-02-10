@@ -22,7 +22,7 @@
         <h1 class="display-3"><%=@event.title%></h1>
         <p class="lead"><%=@event.description%></p>
         
-        <%= link_to "Going", rsvp_event_path(rsvp_status: true) %>
+        <%= link_to "RSVP", rsvp_event_path(rsvp_status: true), class: "btn btn-success" %>
 
       </div>
 
