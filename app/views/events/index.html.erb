@@ -1,0 +1,37 @@
+<div class="container">
+
+  <h1>Events</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead class="thead-default">
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          Time
+        </th>
+        <th>
+          Description
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+          <%= link_to 'New Event', new_event_path %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @events %>
+    </tbody>
+  </table>
+
+  <div id="paginator">
+    <%= paginate @events %><br>
+  </div>
+
+
+</div>
