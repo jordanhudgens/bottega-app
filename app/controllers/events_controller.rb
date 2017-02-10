@@ -4,6 +4,10 @@ class EventsController < ApplicationController
      @event = Event.find(params[:id])
   end
 
+  def index
+    @events = Event.page(params[:page]).per(15)
+  end
+
 	def new
 		@event = Event.new
 	end
