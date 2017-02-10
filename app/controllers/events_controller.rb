@@ -2,7 +2,6 @@ class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def show
-     @event = Event.find(params[:id])
   end
 
   def index
@@ -28,6 +27,13 @@ class EventsController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+  	@event.destroy
+  	respond_to do |format|
+  		format.html { redirect_to events_url, notice: 'Event was removed.'}
+  	end
   end
 
 	private
