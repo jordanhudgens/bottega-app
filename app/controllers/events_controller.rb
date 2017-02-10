@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def show
-    # @event = Event.find(params[:id])-
+     @event = Event.all
   end
 
   private
