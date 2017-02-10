@@ -8,6 +8,8 @@
 
 <%= render 'comments/comment_form' %>
 
+<%= link_to 'Event List', events_path %>
+
 <div id="comments" data-event-id="<%=@event.id %>">
   <%= render @event.comments %>
 </div>
