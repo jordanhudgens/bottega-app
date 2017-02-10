@@ -38,6 +38,13 @@
   </div>
 
 
+<%= render 'comments/comment_form' %>
+
+<div id="comments" data-event-id="<%=@event.id %>">
+  <%= render @event.comments %>
+</div>
+
+
 <footer class="footer">
   <p>&copy; Bottega 2017</p>
 </footer>
