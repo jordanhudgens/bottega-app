@@ -1,4 +1,5 @@
 
-	$('#datetimepicker').datetimepicker({
-    sideBySide: true
-	});
+$('#datetimepicker').datetimepicker({
+  sideBySide: true
+});
+

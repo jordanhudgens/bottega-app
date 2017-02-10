@@ -5,3 +5,9 @@
 <div><%=@event.time%></div>
 <div>Location: <%=@event.location%></div>
 <div>Created by: <%=@event.user.email%></div>
+
+<%= render 'comments/comment_form' %>
+
+<div id="comments" data-event-id="<%=@event.id %>">
+  <%= render @event.comments %>
+</div>
