@@ -8,5 +8,4 @@ puts "1 users created"
     Event.create!(title:"Event #{event}", description:"asdfasdfadfaasdf", location:"Bottega", user_id:1, time:Date.today)
 end
 
-
 puts "100 events created"
