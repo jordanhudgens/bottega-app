@@ -1,10 +1,42 @@
-<h1>This is the show page</h1>
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills float-right">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted">Project name</h3>
+  </div>
 
-<div>Title:<%=@event.title%></div>
-<div><%=@event.description%></div>
-<div><%=@event.time%></div>
-<div>Location: <%=@event.location%></div>
-<div>Created by: <%=@event.user.email%></div>
+  <div class="jumbotron">
+    <div class="row marketing">
+      <div class="col-md-6">
+        <h1 class="display-3"><%=@event.title%></h1>
+        <p class="lead"><%=@event.description%></p>
+        
+        <%= link_to "RSVP", rsvp_event_path(rsvp_status: true), class: "btn btn-success" %>
+
+      </div>
+
+      <div class="col-lg-6">
+        <h4>Hosted by: <%=@event.user.email%></h4>
+
+        <h4>When: <%=@event.time%></h4>
+
+        <h4>Where: <%=@event.location%></h4>
+
+      </div>
+    </div>
+  </div>
+
 
 <%= render 'comments/comment_form' %>
 
@@ -13,3 +45,9 @@
 <div id="comments" data-event-id="<%=@event.id %>">
   <%= render @event.comments %>
 </div>
+
+
+<footer class="footer">
+  <p>&copy; Bottega 2017</p>
+</footer>
+

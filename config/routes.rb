@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  
-  mount ActionCable.server => '/cable'
 
-  resources :events
+  resources :events do
+    member do
+      get :rsvp
+    end
+  end
+
+  mount ActionCable.server => '/cable'
+  
   devise_for :users
   root to: 'static#home'
+
 end

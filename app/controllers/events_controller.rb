@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-	before_action :set_event, only: [:show, :edit, :update, :destroy]
+	before_action :set_event, only: [:edit, :update, :destroy]
 
   def show
      @event = Event.includes(:comments).find(params[:id])
@@ -29,6 +29,12 @@ class EventsController < ApplicationController
     end
   end
 
+
+  def rsvp
+    EventSignup.find_or_create_by(user_id: current_user.id, event_id: params[:id], rsvp: params[:rsvp_status])
+    redirect_to event_path(params[:id]), notice: "You have RSVP'd"
+  end
+
   def edit
     @event = Event.find(params[:id])
   end
@@ -45,6 +51,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+  	@event.destroy
+  	respond_to do |format|
+  		format.html { redirect_to events_url, notice: 'Event was removed.'}
+  	end
+  end
 
 	private
 
