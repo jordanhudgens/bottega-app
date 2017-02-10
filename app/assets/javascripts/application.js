@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require cable
 //= require turbolinks
+//= require moment
 //= require_tree .
