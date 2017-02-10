@@ -1,0 +1,13 @@
+<h1>This is the show page</h1>
+
+<div>Title:<%=@event.title%></div>
+<div><%=@event.description%></div>
+<div><%=@event.time%></div>
+<div>Location: <%=@event.location%></div>
+<div>Created by: <%=@event.user.email%></div>
+
+<%= render 'comments/comment_form' %>
+
+<div id="comments" data-event-id="<%=@event.id %>">
+  <%= render @event.comments %>
+</div>

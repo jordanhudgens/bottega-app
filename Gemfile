@@ -28,3 +28,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+gem 'redis', '~> 3.3', '>= 3.3.3'
+gem 'kaminari', '~> 0.17.0'
+gem 'momentjs-rails', '>= 2.9.0'
