@@ -5,9 +5,9 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.page(params[:page])
+    @events = Event.page(params[:page]).per(15)
   end
-  
+
 	def new
 		@event = Event.new
 	end
