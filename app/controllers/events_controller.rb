@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
 
+	before_action :set_event, only: [:show, :edit, :update, :destroy]
+
+
   def show
      @event = Event.includes(:comments).find(params[:id])
      @comment = Comment.new
@@ -16,6 +19,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
+    @event.user = current_user
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Your event was created'}
@@ -25,9 +30,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
 	private
 
 	  def event_params
-      params.require(:event).permit(:title, :time, :description, :location)
+      params.require(:event).permit(:title, :time, :description, :location, :user_id)
+	  end
+
+	  def set_event
+	  	@event = Event.find(params[:id])
 	  end
 end
