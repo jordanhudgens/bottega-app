@@ -1,0 +1,22 @@
+
+
+<div class="container show">
+  <div class='card event'>
+    <h1 class="display-3"><%=@event.title%></h1>
+    <p>by: <%=@event.user.email%></p>
+    <p class="lead"><%=@event.description%></p>
+    <h4>When: <%=@event.time%></h4>
+    <h4>Where: <%=@event.location%></h4>
+    <%= link_to "RSVP", rsvp_event_path(rsvp_status: true), class: "btn btn-success" %>
+    <%= link_to 'Event List', events_path %>
+    <div class="attendees"> 
+       <%= render 'attendees' %>
+    </div>
+  </div>
+  <div class='card comment-section'>
+    <div id="comments" data-event-id="<%=@event.id %>">
+    <%= render @event.comments %>
+    </div>
+    <%= render 'comments/comment_form' %>
+  </div>
+</div>
