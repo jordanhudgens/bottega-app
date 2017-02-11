@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   def show
      @event = Event.includes(:comments).find(params[:id])
      @comment = Comment.new
+     @attendees = @event.users
   end
 
   def index

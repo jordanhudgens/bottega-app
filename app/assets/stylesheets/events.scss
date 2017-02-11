@@ -1,3 +1,30 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show{
+  background-color: #e0e0e0;
+  min-width: 100%;
+}
+
+.event{
+  height: 400px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+}
+
+.attendees {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.comment-section{
+  margin-top: 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
