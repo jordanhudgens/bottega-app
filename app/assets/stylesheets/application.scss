@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'events';
 
 $robo: "Roboto", sans-serif;
 
@@ -15,6 +16,7 @@ $darkGray: #333
 $brightGreen: #36e29d
 $title-gray:#666a73
 $subtitle-gray: #a2a4a9
+
 
 html
   font-family: $robo
