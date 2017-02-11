@@ -1,33 +1,8 @@
-<div class="container">
+<div id="page-padding">
 
-  <h1>Upcoming Events!</h1>
+  <p id="title-bar">Meet-Ups <%= link_to 'Add Event', new_event_path, class: "btn btn-success float" %></p>
 
-  <table class="table table-bordered table-hover">
-    <thead class="thead-default">
-      <tr>
-        <th>
-          Title
-        </th>
-        <th>
-          Location
-        </th>
-        <th>
-          Time
-        </th>
-        <th>
-          Description
-        </th>
-        <th></th>
-        <th></th>
-        <th>
-          <%= link_to 'New Event', new_event_path %>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @events %>
-    </tbody>
-  </table>
+  <%= render @events %>
 
   <div id="paginator">
     <%= paginate @events %><br>
