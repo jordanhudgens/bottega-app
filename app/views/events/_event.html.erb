@@ -1,0 +1,4 @@
+<h4><%= event.title %></h4>
+<p>By: <%= event.user.first_name + " " + event.user.last_name %></p>
+<p class="gray-text"><%= event.description.truncate(40) %></p>
+<td><%= link_to 'Details', event, class: "btn btn-success" %></td><hr>

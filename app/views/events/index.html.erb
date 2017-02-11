@@ -1,0 +1,12 @@
+<div id="page-padding">
+
+  <p id="title-bar">Meet-Ups <%= link_to 'Add Event', new_event_path, class: "btn btn-success float" %></p>
+
+  <%= render @events %>
+
+  <div id="paginator">
+    <%= paginate @events %><br>
+  </div>
+
+
+</div>

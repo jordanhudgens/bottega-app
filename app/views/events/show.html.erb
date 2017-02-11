@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row marketing">
+      <div class="col-md-6">
+        <h1 class="display-3"><%=@event.title%></h1>
+        <p class="lead"><%=@event.description%></p>
+        
+        <%= link_to "RSVP", rsvp_event_path(rsvp_status: true), class: "btn btn-success" %>
+
+      </div>
+
+      <div class="col-lg-6">
+        <h4>Hosted by: <%=@event.user.email%></h4>
+
+        <h4>When: <%=@event.time%></h4>
+
+        <h4>Where: <%=@event.location%></h4>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'comments/comment_form' %>
+
+<%= link_to 'Event List', events_path %>
+
+<div id="comments" data-event-id="<%=@event.id %>">
+  <%= render @event.comments %>
+</div>
+
+
+<footer class="footer">
+  <p>&copy; Bottega 2017</p>
+</footer>
+
